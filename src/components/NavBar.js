@@ -1,7 +1,7 @@
 import React from "react";
 import {CartWidget} from "./CartWidget";
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
             <ul class="nav">
                 <li class="nav-item">
@@ -17,7 +17,7 @@ const Navbar = () => {
                     <a class="nav-link" href="#">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <CartWidget />
+                    <CartWidget initial = {props.initial}/>
                 </li>
             </ul>
     )

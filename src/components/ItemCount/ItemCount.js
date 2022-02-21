@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 
 
 
@@ -11,6 +11,8 @@ export const ItemCount = (props) => {
     //     setCount(count + 1);
     //     setCurrentdate(new Date().toString());
     // }
+    // useEffect(props.onAdd, [count]);
+
 
     const handlePlus = () => {
         if (count < props.stock){
@@ -32,8 +34,8 @@ export const ItemCount = (props) => {
 
 
     return(
-        <div class="mt-5">
-            <div class="m-5">
+        <div class="m-5">
+            <div class="mb-5">
             <button onClick={handleMinus }>-</button>
             <span class="m-5">{count}</span>
             <button onClick={handlePlus}>+</button>
