@@ -1,6 +1,7 @@
 import React from "react";
 import { ItemCount } from "./ItemCount/ItemCount";
 import {ItemList} from "./ItemList/ItemList";
+import { ItemDetailContainer } from "./ItemDetailContainer/ItemDetailContainer";
 
 // function ItemListContainer(){
 //     return <>
@@ -20,7 +21,8 @@ const ItemListContainer = (props) => {
 
     return(
         <React.Fragment>
-            <ItemList/>
+            {/* <ItemList/> */}
+            <ItemDetailContainer/>
             <ItemCount stock={stock} initial = {initial} />
             {/* <h1>{props.title}</h1>
             <h2>{props.number}</h2>

@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import {Item} from '../Item/Item';
 import {products} from '../../Data/Data';
+import { ItemDetail } from '../ItemDetail/ItemDetail';
 // import {useParams} from 'react-router-dom'; //para obtener el id del producto
 
-export const ItemList = (props) => {
-    const [items, setItems] = useState([]);
+export const ItemDetailContainer = (props) => {
+    const [details, setDetails] = useState([]);
     // const {id} = useParams();
 
     const getItem = new Promise((resolve, reject) => {
@@ -16,22 +16,22 @@ export const ItemList = (props) => {
 
     useEffect(() => {
         getItem.then(   data => {
-            setItems(data);
+            setDetails(data);
             // console.log('data', data);
         });
-    }, [items]);
+    }, [details]);
 
     // console.log('items', items);
     return(
         <React.Fragment>
             <div>
                 <p>Listado de items</p>
-                {items.length === 0 ? 
+                {details.length === 0 ? 
                 
                 <p>Cargando...</p> 
                 :
-                    items.map((item) =>{
-                        return(<Item key={item.id} item={item}/>) 
+                details.map((detail) =>{
+                        return(<ItemDetail key={detail.id} detail={detail}/>) 
                     })
                 }
             </div>
